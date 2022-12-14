@@ -16,7 +16,6 @@ return {
   -- Override plugin definition options
   ["goolord/alpha-nvim"] = {
     disable = false,
-    cmd = "Alpha",
   },
 
 
