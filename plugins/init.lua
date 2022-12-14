@@ -89,6 +89,12 @@ return {
     },
 
 
+  ["lewis6991/gitsigns.nvim"] = {
+    override_options = {
+      current_line_blame = true,
+    },
+  },
+
   -- Lisp stuff
   ["Olical/conjure"] = {
     ft = lisp_file_types,
