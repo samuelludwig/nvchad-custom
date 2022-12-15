@@ -49,6 +49,7 @@ return {
         "html",
         "css",
         "python",
+        "vim",
       },
     },
   },
