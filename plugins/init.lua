@@ -18,6 +18,13 @@ return {
     disable = false,
   },
 
+  ["folke/which-key.nvim"] = {
+    disable = false,
+  },
+
+  ["ojroques/vim-oscyank"] = {
+    branch = "main",
+  },
 
   -- LSP stuff
   ["neovim/nvim-lspconfig"] = {
