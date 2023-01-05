@@ -6,7 +6,10 @@ local servers = {
   "clojure_lsp",
   "intelephense",
   "yamlls",
+  "ansiblels",
   "html",
+  "sqlls",
+  "dockerls",
 }
 
 for _, lsp in ipairs(servers) do
