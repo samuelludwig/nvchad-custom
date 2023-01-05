@@ -76,14 +76,17 @@ return {
           "deno",
           "emmet-ls",
           "json-lsp",
-          "yaml-language-server",
           "intelephense",
+          "eslint_d",
+          "prettierd",
+
+          -- infra/db
           "nginx-language-server",
           "sqls",
           "sql-formatter",
+          "ansible-language-server",
           "dockerfile-language-server",
-          "eslint_d",
-          "prettierd",
+          "yaml-language-server",
 
           -- shell
           "shfmt",
