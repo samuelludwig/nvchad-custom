@@ -80,6 +80,10 @@ return {
           "eslint_d",
           "prettierd",
 
+          -- python
+          "python-lsp-server",
+          "pyright",
+
           -- infra/db
           "nginx-language-server",
           "sqls",

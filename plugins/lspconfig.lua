@@ -10,6 +10,8 @@ local servers = {
   "html",
   "sqlls",
   "dockerls",
+  "pylsp",
+  "pyright",
 }
 
 for _, lsp in ipairs(servers) do
