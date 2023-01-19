@@ -105,9 +105,10 @@ return {
   ["tpope/vim-fugitive"] = {},
 
   ["lewis6991/gitsigns.nvim"] = {
-    override_options = {
-      current_line_blame = true,
-    },
+    -- Use <leader>gb to get the blame line on-demand
+    -- override_options = {
+    --   current_line_blame = true,
+    -- },
   },
 
   -- Lisp stuff
