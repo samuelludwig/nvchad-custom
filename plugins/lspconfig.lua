@@ -12,6 +12,7 @@ local servers = {
   "dockerls",
   "pylsp",
   "pyright",
+  "marksman",
 }
 
 for _, lsp in ipairs(servers) do

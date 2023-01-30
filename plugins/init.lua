@@ -45,21 +45,76 @@ return {
 	["nvim-treesitter/nvim-treesitter"] = {
 		override_options = {
 			ensure_installed = {
+        -- Vimish
 				"lua",
+				"vim",
+				"fennel",
+
+        -- Shellish
+        "elvish",
+        "bash",
+				"fish",
+
+        -- JVMish
 				"clojure",
-				"php",
+				"java",
+
+        -- Infra + Scripting
 				"dockerfile",
+				"json",
 				"yaml",
-				"bash",
+				"ini",
+				"toml",
+				"python",
+				"make",
+
+        -- PHP
+				"php",
+				"phpdoc",
+
+        -- Web-ish
 				"typescript",
 				"javascript",
 				"html",
 				"css",
-				"python",
-				"vim",
+
+        -- Text
+				"markdown",
+				"markdown_inline",
+
+        -- SQL
+				"sql",
+
+        -- Git
+				"gitignore",
+				"gitcommit",
+				"gitattributes",
+				"git_rebase",
+				"diff",
+			},
+
+			playground = {
+				enable = true,
+				disable = {},
+				updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
+				persist_queries = false, -- Whether the query persists across vim sessions
+				keybindings = {
+					toggle_query_editor = "o",
+					toggle_hl_groups = "i",
+					toggle_injected_languages = "t",
+					toggle_anonymous_nodes = "a",
+					toggle_language_display = "I",
+					focus_language = "f",
+					unfocus_language = "F",
+					update = "R",
+					goto_node = "<cr>",
+					show_help = "?",
+				},
 			},
 		},
 	},
+
+	["nvim-treesitter/playground"] = {},
 
 	-- These will require npm, and go
 	["williamboman/mason.nvim"] = {
@@ -69,6 +124,11 @@ return {
 				"lua-language-server",
 				"stylua",
 
+				-- php
+				"intelephense",
+				"php-debug-adapter",
+				"php-cs-fixer",
+
 				-- web dev
 				"css-lsp",
 				"html-lsp",
@@ -76,7 +136,6 @@ return {
 				"deno",
 				"emmet-ls",
 				"json-lsp",
-				"intelephense",
 				"eslint_d",
 				"prettierd",
 
@@ -102,7 +161,9 @@ return {
 		},
 	},
 
-	["tpope/vim-fugitive"] = {},
+	["TimUntersberger/neogit"] = {
+    requires = {"nvim-lua/plenary.nvim"},
+  },
 
 	["lewis6991/gitsigns.nvim"] = {
 		-- Use <leader>gb to get the blame line on-demand
