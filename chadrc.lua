@@ -1,9 +1,24 @@
+---@type ChadrcConfig
 local M = {}
 
-M.plugins = "custom.configs.plugins"
+-- Path to overriding theme and highlights files
+local highlights = require "custom.highlights"
 
 M.ui = {
-  theme = "palenight"
+  theme = "onedark",
+  theme_toggle = { "onedark", "one_light" },
+
+  hl_override = highlights.override,
+  hl_add = highlights.add,
 }
+
+-- M.ui = {
+--   theme = "palenight"
+-- }
+
+M.plugins = "custom.plugins"
+
+-- check core.mappings for table structure
+M.mappings = require "custom.mappings"
 
 return M
