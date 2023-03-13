@@ -1,6 +1,6 @@
 local M = {}
 
-M.plugins = require "custom.plugins"
+M.plugins = "custom.configs.plugins"
 
 M.ui = {
   theme = "palenight"
