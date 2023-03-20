@@ -99,18 +99,49 @@ local plugins = {
 		opts = overrides.mason,
 	},
 
+  -- Git stuff
+
 	{
     "TimUntersberger/neogit",
-    dependencies = {"nvim-lua/plenary.nvim"},
+    dependencies = {
+      {"nvim-lua/plenary.nvim"},
+      {"sindrets/diffview.nvim"}
+    },
+    event = "BufReadPre",
+    config = function()
+      require("neogit").setup {
+        kind = "vsplit", -- default = "tab"
+        -- ^ one of {
+        --   "tab", 
+        --   "split", 
+        --   "vsplit", 
+        --   "replace", 
+        --   "split_above"
+        -- },
+        diffview = true,
+      }
+    end
   },
 
 	{
     "lewis6991/gitsigns.nvim",
+    event = "VimEnter",
 		-- Use <leader>gb to get the blame line on-demand
 		-- opts = {
 		--   current_line_blame = true,
 		-- },
 	},
+
+	{
+    "tpope/vim-fugitive",
+    event = "VimEnter",
+	},
+
+  {
+    "sindrets/diffview.nvim",
+    event = "VimEnter",
+    dependencies = {"nvim-lua/plenary.nvim"}
+  },
 
 	-- Lisp stuff
 	{
@@ -145,6 +176,21 @@ local plugins = {
 	},
 
 	--{"tpope/vim-repeat"},
+
+  -- Folding
+  {
+    "kevinhwang91/nvim-ufo",
+    dependencies = {
+      "kevinhwang91/promise-async",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      provider_selector = function (bufnr, filetype, buftype)
+        return {"treesitter", "indent"}
+      end
+    end,
+    event = {"VeryLazy"},
+  }
 
 }
 
